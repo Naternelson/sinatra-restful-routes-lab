@@ -1,0 +1,12 @@
+<ul class="collapsible">
+    <% @recipes.each do |r| %>
+    <li>
+        <div class="collapsible-header"><%= r.name %></div>
+        <div class="collapsible-body">
+            <span><%= r.ingredients %></span>
+            <div><%= r.cook_time %></div>
+            <a href=<%= "/recipes/#{r.id}"%>
+        </div>
+    </li>
+    <% end %>
+</ul>

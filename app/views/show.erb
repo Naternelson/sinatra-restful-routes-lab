@@ -1,0 +1,14 @@
+<ul class="collapsible">
+    <% r = @recipe %>
+    <li>
+        <div class="collapsible-header"><%= r.name %></div>
+        <div class="collapsible-body">
+            <span><%= r.ingredients %></span>
+            <div><%= "#{r.cook_time.to_i} minutes" %></div>
+        </div>
+    </li>
+    <form method="POST" action=<%= "/recipes/#{@recipe.id}" %> >
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <button type="submit" value="delete" class="waves-effect waves-light btn">delete recipe</button>
+    </form>
+</ul>
